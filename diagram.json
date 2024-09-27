@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Erysonyc Gamer",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 172.8, "left": -52.76, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -92.57, "left": -137.6, "attrs": {} },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -174.8,
+      "left": 293.6,
+      "attrs": {}
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -126.8, "left": -374.4, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "keypad1:R1", "esp:16", "green", [ "v0" ] ],
+    [ "keypad1:R2", "esp:17", "green", [ "v0" ] ],
+    [ "keypad1:R3", "esp:18", "green", [ "v0" ] ],
+    [ "keypad1:R4", "esp:19", "green", [ "v0" ] ],
+    [ "keypad1:C1", "esp:25", "green", [ "v0" ] ],
+    [ "keypad1:C2", "esp:26", "green", [ "v0" ] ],
+    [ "keypad1:C3", "esp:27", "green", [ "v0" ] ],
+    [ "keypad1:C4", "esp:14", "green", [ "v0" ] ],
+    [ "esp:5V", "servo1:V+", "red", [ "h-393.45", "v-518.5" ] ],
+    [ "esp:GND.1", "servo1:GND", "black", [ "h-403.05", "v-480" ] ],
+    [ "esp:13", "servo1:PWM", "green", [ "h-374.25", "v-470.6" ] ],
+    [ "esp:GND.1", "lcd1:VSS", "black", [ "h0" ] ],
+    [ "esp:5V", "lcd1:VDD", "red", [ "h0" ] ],
+    [ "esp:GND.1", "lcd1:V0", "black", [ "h0" ] ],
+    [ "esp:12", "lcd1:RS", "green", [ "v0", "h-28.65" ] ],
+    [ "esp:GND.3", "lcd1:RW", "black", [ "h9.6", "v-134.4", "h-124.8" ] ],
+    [ "esp:14", "lcd1:E", "green", [ "h0" ] ],
+    [ "lcd1:D4", "esp:27", "green", [ "v9.6", "h-38.4" ] ],
+    [ "esp:26", "lcd1:D5", "green", [ "h0" ] ],
+    [ "lcd1:D6", "esp:25", "green", [ "v0" ] ],
+    [ "lcd1:D7", "esp:33", "green", [ "v0" ] ],
+    [ "esp:5V", "lcd1:A", "red", [ "h0" ] ],
+    [ "esp:GND.1", "lcd1:K", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
